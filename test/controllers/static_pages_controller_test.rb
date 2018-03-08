@@ -14,7 +14,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get help" do
     get help_path
     assert_response :success
-    assert_select "title", "Help | Ruby on Rails Tutorial Sample App"
+    assert_select "title", "Help | Ruby on Rails Tutorial Sample App", as: 'help'
   end
 
   test "should get about" do
@@ -28,7 +28,9 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "Contact | Ruby on Rails Tutorial Sample App"
   end
-
+  
+end
+  
 
 
 #Tests on the controllor are primarily
@@ -37,4 +39,3 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 #Tests on the model are checking your
 #local file logic.
 
-end
